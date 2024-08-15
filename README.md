@@ -81,5 +81,15 @@ Compile a extensão (sempre que fizer uma alteração, rode este comando):
 ```  npm run compile ```
 
 ###   Inicie a extensão no VS Code:
-Pressione F5 no VS Code para abrir uma nova janela com a extensão em modo de depuração.
-Execute o comando "Enviar Email" a partir da paleta de comandos (Ctrl+Shift+P).
+
+Após clonar o repositorio, instale as dependencias e gere o pasta 'dist' :
+
+```
+  npm install
+  npm run compile 
+
+```
+
+Vá até o arquivo 'extension.ts' e  Pressione F5;
+O VS Code irá abrir uma nova janela com a extensão em modo de depuração.
+Execute o comando (Ctrl+Shift+P) e escreva o  "Inicar Extensão" a partir da paleta de comandos .
