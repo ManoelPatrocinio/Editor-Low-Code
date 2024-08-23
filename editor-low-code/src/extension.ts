@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { main } from './pages/webview';
+import { main,formulario } from './pages/webview';
 
 
 export function activate(context: vscode.ExtensionContext) {
@@ -23,8 +23,10 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 		);
 		
-		// chama a funcão com o html para exibir na extesão
+		// chama a funcão com o html para exibir na extensão
 		panel.webview.html = main();
+		
+		
 
 	});
 
