@@ -50,7 +50,7 @@ export function main(): string {
                         <ul class="w-100 h-100 ps-1">
                             <li class="mb-3">
                                 <a class="w-100 text-light mb-3" href="#" id="sendSimpleEmail">
-                                    Envio de E-mail simple
+                                    Envio de E-mail simples
                                     <br />
                                     <small  class="ps-2" style="color: #cecece;">Envio para um destinátario</small>
                                 </a>
@@ -104,7 +104,7 @@ export function main(): string {
             </nav>
             <main class="col-9 d-flex justify-content-center text-center align-items-center">
                 <div>
-                    <h1 class="w-100 text-success"> Seja Bem Vindo</h1>
+                    <h1 class="w-100 text-success"> Seja Bem-Vindo</h1>
                     <h3 class="w-100 text-success"> Extensão Low Code</h3>
                 </div>
             </main>
