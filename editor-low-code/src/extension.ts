@@ -1,37 +1,40 @@
 import * as vscode from 'vscode';
-import { main,formulario } from './pages/webview';
+import { main,form_sendEmail } from './pages/webview';
 import { SendEmailWithRobot } from './utils/send_email_class';
+import { robotKeywords } from './robot/keywords';
 
 
 export function activate(context: vscode.ExtensionContext) {
+	let panel: vscode.WebviewPanel | undefined;
 
 	context.subscriptions.push(
 		vscode.commands.registerCommand('editor-low-code.start', () => {
 		
-			const panel = vscode.window.createWebviewPanel(
+			panel = vscode.window.createWebviewPanel(
 				'start',
-				'Home',
+				'Editor Low Code',
 				vscode.ViewColumn.One,
 				{
 					enableScripts: true
 				}
 			);
 			
-			// Chama a funcão com o html para exibir na extensão
+			// Chama a função com o html para exibir a tela inicial
 			panel.webview.html = main();
 	
 	
 			panel.webview.onDidReceiveMessage(
 				async (message) => {
 					if (message.command === 'goToHome') {
-						panel.webview.html = main();
+						panel!.webview.html = main();
 	
 					}
 					else if (message.command === 'openSendEmailForm') {
-						panel.webview.html = formulario();
-					} else if (message.command === 'sendEmail') {
-						await sendEmail(message.email, message.subject, message.body,context.extensionPath);
-						panel.webview.postMessage({ command: 'response', text: 'Email enviado com sucesso!' });
+						panel!.webview.html = form_sendEmail();
+					} else if (message.command === 'modal_sendEmail') {
+						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
+						await Modal("Enviar E-mail",panel!);
+						panel!.webview.postMessage({ command: 'response', text: 'Código gerado' });
 					}
 				},
 				undefined,
@@ -44,6 +47,19 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 }
 
+
+async function Modal(keyword:string,panel: vscode.WebviewPanel) {
+    const keywordData = robotKeywords[keyword]; 
+    const keywordCode = keywordData.code; // Pega o código da keyword
+
+
+    // Envia uma mensagem para o webview exibir o modal com o código da keyword
+    panel.webview.postMessage({
+        command: 'showModal',
+        code: keywordCode // Passa o código da keyword para ser exibido no modal
+    });
+	
+}
 async function sendEmail(to: string, subject: string, text: string, extensionPath: string) {
    
 
