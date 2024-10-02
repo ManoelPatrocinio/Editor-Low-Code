@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            min-height: 100vh
+        }
+
+        .bg-custom-dark {
+            background-color: #1d212a;
+        }
+
+        .mx-0 {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+
+    <div class="w-100  min-vh-100 d-flex row bg-custom-dark mx-0">
+        <nav class="col-3 border-end min-vh-100">
+            <a class="w-100 d-block bg-success text-light fw-medium text-center py-2 mt-3 mb-4 rounded" href="#"
+                id="home">
+                Editor Low Code
+            </a>
+            <ul class="w-100  ps-3">
+                <li class="mb-3">
+                    <a class="btn text-light w-100 text-start fw-medium" data-bs-toggle="collapse"
+                        href="#collapseSendEmails" role="button" aria-expanded="false"
+                        aria-controls="collapseSendEmails">
+                        <svg class="me-1" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.84049 5.95463C2.05146 5.74372 2.33756 5.62524 2.63587 5.62524C2.93418 5.62524 3.22027 5.74372 3.43124 5.95463L8.99999 11.5234L14.5687 5.95463C14.7809 5.7497 15.0651 5.63631 15.3601 5.63887C15.655 5.64143 15.9372 5.75975 16.1458 5.96833C16.3544 6.17692 16.4727 6.45908 16.4753 6.75405C16.4778 7.04902 16.3644 7.3332 16.1595 7.54538L9.79537 13.9095C9.5844 14.1204 9.2983 14.2389 8.99999 14.2389C8.70168 14.2389 8.41559 14.1204 8.20462 13.9095L1.84049 7.54538C1.62959 7.33441 1.51111 7.04831 1.51111 6.75C1.51111 6.45169 1.62959 6.1656 1.84049 5.95463Z"
+                                fill="#CCCCCC" />
+                        </svg>
+                        E-mail
+                    </a>
+                </li>
+                <div class="collapse bg-transparent ps-4 mt-2 mb-4  " id="collapseSendEmails">
+                    <ul class="w-100 h-100 ps-1">
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="AcessarSMTP">
+                                Acessar SMTP
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="Email">
+                                Enviar E-mail
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="w-100 text-light " href="#" id="sendMultipleEmail">
+                                Filtrar E-mails
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                    </ul>
+
+
+
+                </div>
+
+
+
+                <li class="mb-3">
+                    <a class="btn text-light w-100 text-start fw-medium" data-bs-toggle="collapse"
+                        href="#collapseDateTime" role="button" aria-expanded="false" aria-controls="collapseDateTime">
+                        <svg class="me-1" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.84049 5.95463C2.05146 5.74372 2.33756 5.62524 2.63587 5.62524C2.93418 5.62524 3.22027 5.74372 3.43124 5.95463L8.99999 11.5234L14.5687 5.95463C14.7809 5.7497 15.0651 5.63631 15.3601 5.63887C15.655 5.64143 15.9372 5.75975 16.1458 5.96833C16.3544 6.17692 16.4727 6.45908 16.4753 6.75405C16.4778 7.04902 16.3644 7.3332 16.1595 7.54538L9.79537 13.9095C9.5844 14.1204 9.2983 14.2389 8.99999 14.2389C8.70168 14.2389 8.41559 14.1204 8.20462 13.9095L1.84049 7.54538C1.62959 7.33441 1.51111 7.04831 1.51111 6.75C1.51111 6.45169 1.62959 6.1656 1.84049 5.95463Z"
+                                fill="#CCCCCC" />
+                        </svg>
+                        DateTime
+                    </a>
+                </li>
+                <div class="collapse bg-transparent ps-4 mt-2 mb-4  " id="collapseDateTime">
+                    <ul class="w-100 h-100 ps-1">
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="ColetarDataAtual">
+                                Coletar Data Atual
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <li class="mb-3">
+                    <a class="btn text-light w-100 text-start fw-medium" data-bs-toggle="collapse"
+                        href="#collapseOperatingSystem" role="button" aria-expanded="false"
+                        aria-controls="collapseOperatingSystem">
+                        <svg class="me-1" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.84049 5.95463C2.05146 5.74372 2.33756 5.62524 2.63587 5.62524C2.93418 5.62524 3.22027 5.74372 3.43124 5.95463L8.99999 11.5234L14.5687 5.95463C14.7809 5.7497 15.0651 5.63631 15.3601 5.63887C15.655 5.64143 15.9372 5.75975 16.1458 5.96833C16.3544 6.17692 16.4727 6.45908 16.4753 6.75405C16.4778 7.04902 16.3644 7.3332 16.1595 7.54538L9.79537 13.9095C9.5844 14.1204 9.2983 14.2389 8.99999 14.2389C8.70168 14.2389 8.41559 14.1204 8.20462 13.9095L1.84049 7.54538C1.62959 7.33441 1.51111 7.04831 1.51111 6.75C1.51111 6.45169 1.62959 6.1656 1.84049 5.95463Z"
+                                fill="#CCCCCC" />
+                        </svg>
+                        Operating System
+                    </a>
+                </li>
+                <div class="collapse bg-transparent ps-4 mt-2 mb-4  " id="collapseOperatingSystem">
+                    <ul class="w-100 h-100 ps-1">
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="CopiarArquivo">
+                                Copiar Arquivo
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="MoverArquivo">
+                                Mover Arquivo
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="CriarArquivo">
+                                Criar Arquivo
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="LerArquivo">
+                                Ler Arquivo
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <li class="mb-3">
+                    <a class="btn text-light w-100 text-start fw-medium" data-bs-toggle="collapse"
+                        href="#collapseBiultin" role="button" aria-expanded="false" aria-controls="collapseBiultin">
+                        <svg class="me-1" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.84049 5.95463C2.05146 5.74372 2.33756 5.62524 2.63587 5.62524C2.93418 5.62524 3.22027 5.74372 3.43124 5.95463L8.99999 11.5234L14.5687 5.95463C14.7809 5.7497 15.0651 5.63631 15.3601 5.63887C15.655 5.64143 15.9372 5.75975 16.1458 5.96833C16.3544 6.17692 16.4727 6.45908 16.4753 6.75405C16.4778 7.04902 16.3644 7.3332 16.1595 7.54538L9.79537 13.9095C9.5844 14.1204 9.2983 14.2389 8.99999 14.2389C8.70168 14.2389 8.41559 14.1204 8.20462 13.9095L1.84049 7.54538C1.62959 7.33441 1.51111 7.04831 1.51111 6.75C1.51111 6.45169 1.62959 6.1656 1.84049 5.95463Z"
+                                fill="#CCCCCC" />
+                        </svg>
+                        Biultin
+                    </a>
+                </li>
+                <div class="collapse bg-transparent ps-4 mt-2 mb-4  " id="collapseBiultin">
+                    <ul class="w-100 h-100 ps-1">
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="ExecutPython">
+                                Executar Expressão Python
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <li class="mb-3">
+                    <a class="btn text-light w-100 text-start fw-medium" data-bs-toggle="collapse"
+                        href="#collapseSelenium" role="button" aria-expanded="false" aria-controls="collapseSelenium">
+                        <svg class="me-1" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.84049 5.95463C2.05146 5.74372 2.33756 5.62524 2.63587 5.62524C2.93418 5.62524 3.22027 5.74372 3.43124 5.95463L8.99999 11.5234L14.5687 5.95463C14.7809 5.7497 15.0651 5.63631 15.3601 5.63887C15.655 5.64143 15.9372 5.75975 16.1458 5.96833C16.3544 6.17692 16.4727 6.45908 16.4753 6.75405C16.4778 7.04902 16.3644 7.3332 16.1595 7.54538L9.79537 13.9095C9.5844 14.1204 9.2983 14.2389 8.99999 14.2389C8.70168 14.2389 8.41559 14.1204 8.20462 13.9095L1.84049 7.54538C1.62959 7.33441 1.51111 7.04831 1.51111 6.75C1.51111 6.45169 1.62959 6.1656 1.84049 5.95463Z"
+                                fill="#CCCCCC" />
+                        </svg>
+                        Selenium
+                    </a>
+                </li>
+                <div class="collapse bg-transparent ps-4 mt-2 mb-4  " id="collapseSelenium">
+                    <ul class="w-100 h-100 ps-1">
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="AbrirNavegador">
+                                Abrir Navegador
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="ColetarTexto">
+                                Coletar Texto
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="InserirTexto">
+                                Inserir Texto
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="ClicarElemento">
+                                Clicar no Elemento
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="EsperarElemento">
+                                Esperar Elemento
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="Selecionar Arquivo">
+                                Selecionar Arquivo <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="ColetarElementos">
+                                Coletar Quantidade de Elementos
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="IrPara">
+                                Ir Para
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a class="w-100 text-light mb-3" href="#" id="VoltarPara">
+                                Voltar Para
+                                <br />
+                                <small class="ps-2" style="color: #cecece;"></small>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </ul>
+                      
+        </nav>
+        <main class="col-9 d-flex justify-content-center text-center align-items-center">
+            <div>
+                <h1 class="w-100 text-success"> Seja Bem-Vindo</h1>
+                <h3 class="w-100 text-success"> Extensão Low Code</h3>
+            </div>
+        </main>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

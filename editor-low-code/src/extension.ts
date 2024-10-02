@@ -29,6 +29,57 @@ export function activate(context: vscode.ExtensionContext) {
 						panel!.webview.html = main();
 	
 					}
+					else if(message.command === 'openFilterEmailForm'){
+						panel!.webview.html = form_sendEmail();
+					}
+					else if(message.command === 'openAcessarSMTPForm'){
+						panel!.webview.html = main();
+					}
+					else if(message.command === 'openColetarDataAtualForm'){
+						panel!.webview.html = main();
+					}
+					else if(message.command === 'openCopiarArquivoForm'){
+						panel!.webview.html = main();
+					}
+					else if(message.command === 'openMoverArquivoForm'){
+						panel!.webview.html = main();
+					}
+					else if(message.command === 'openCriarArquivoForm'){
+						panel!.webview.html = main();
+					}
+					else if(message.command === 'openLerArquivoForm'){
+						panel!.webview.html = main();
+					}
+					else if(message.command === 'openExecutPythonForm'){
+						panel!.webview.html = main();
+					}
+					else if(message.command === 'openAbrirNavegadorForm'){
+						panel!.webview.html = main();
+					}
+					else if(message.command === 'openInserirTextoForm'){
+						panel!.webview.html = main();
+					}
+					else if(message.command === 'openColetarTextoForm'){
+						panel!.webview.html = main();
+					}
+					else if(message.command === 'openClicarElementoForm'){
+						panel!.webview.html = main();
+					}
+					else if(message.command === 'openEsperarElementoForm'){
+						panel!.webview.html = main();
+					}
+					else if(message.command === 'openSelecionarArquivoForm'){
+						panel!.webview.html = main();
+					}
+					else if(message.command === 'openColetarElementosForm'){
+						panel!.webview.html = main();
+					}
+					else if(message.command === 'openIrParaForm'){
+						panel!.webview.html = main();
+					}
+					else if(message.command === 'openVoltarParaForm'){
+						panel!.webview.html = main();
+					}
 					else if (message.command === 'openSendEmailForm') {
 						panel!.webview.html = form_sendEmail();
 					} else if (message.command === 'modal_sendEmail') {

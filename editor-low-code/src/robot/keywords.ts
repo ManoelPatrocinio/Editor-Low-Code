@@ -14,6 +14,13 @@ export const robotKeywords:RobotKeywords = {
         Library    RPA.Browser.Selenium
         Library    RPA.Email.ImapSmtp
 
+        *** Variables ***
+        
+        ${'{email}'}    
+        ${'{assunto}'}    
+        ${'{mensagem}'}
+    
+
         *** Keywords ***
         Enviar E-mail
             [Arguments]    ${'{email}'}    ${'{assunto}'}    ${'{mensagem}'}
@@ -42,7 +49,7 @@ export const robotKeywords:RobotKeywords = {
         Filtrar E-mails
             [Arguments]    ${'{criterio}'}
             Filter Emails    ${'{criterio}'}`,
-                    arguments: ['criterio']
+         arguments: ['criterio']
         },
-    // Adicione outras keywords e seus argumentos aqui conforme necessário
+      // Adicione outras keywords e seus argumentos aqui conforme necessário
 };
