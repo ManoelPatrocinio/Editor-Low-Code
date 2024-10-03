@@ -51,5 +51,51 @@ export const robotKeywords:RobotKeywords = {
             Filter Emails    ${'{criterio}'}`,
          arguments: ['criterio']
         },
+    'Copiar Arquivo': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    RPA.Email.ImapSmtp
+        
+        *** Keywords ***
+        Copiar Arquivo
+            [Arguments] source ${'{arquivo_para_copiar}'}
+            destination ${'{diretorio_final}'}`,
+         arguments: ['arquivo_para_copiar','diretorio_final']
+        },
+    'Ler Arquivo': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    RPA.Email.ImapSmtp
+        
+        *** Keywords ***
+        Ler Arquivo
+            [Arguments] ${'{conteudo_arquivo}'}    Get File    ${'{arquivo}'}`,
+         arguments: ['conteudo_arquivo','arquivo']
+        },
+    'Mover Arquivo': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    RPA.Email.ImapSmtp
+            
+        *** Keywords ***
+        Mover Arquivo
+            [Arguments]    Move File    source=${'{arquivo_para_mover}'}    destination=${'{diretorio_final}'} `,
+         arguments: ['arquivo_para_mover','diretorio_final']
+        },
+    'Coletar Texto': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    RPA.Email.ImapSmtp
+            
+        *** Keywords ***
+        Coletar Texto
+            [Arguments]   Get Text    locator=${'{locator}'} `,
+        arguments: ['locator']
+        },
+    
       // Adicione outras keywords e seus argumentos aqui conforme necessário
 };
