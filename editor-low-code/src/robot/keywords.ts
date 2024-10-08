@@ -50,5 +50,16 @@ export const robotKeywords:RobotKeywords = {
             Filter Emails    ${'{criterio}'}`,
          arguments: ['criterio']
         },
+    'Clicar no Elemento': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    RPA.Email.ImapSmtp
+        
+        *** Keywords ***
+        Clicar no Elemento
+            Click Element    locator=${'{locator}'}`,
+         arguments: ['locator']
+        },
       // Adicione outras keywords e seus argumentos aqui conforme necessário
 };
