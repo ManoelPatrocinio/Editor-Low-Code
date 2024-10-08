@@ -94,5 +94,16 @@ export const robotKeywords:RobotKeywords = {
             ${'{data_atual}'}    Get Current Date  result_format=${'{formato_data}'}`,
          arguments: ['formato_data']
     },
+    'Criar Arquivo': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    RPA.Email.ImapSmtp
+        
+        *** Keywords ***
+        Criar Arquivo
+            Create File    path=${'{arquivo}'}  content=${'{conteudo}'}`,
+         arguments: ['arquivo', 'conteudo']
+    },
       // Adicione outras keywords e seus argumentos aqui conforme necessário
 };
