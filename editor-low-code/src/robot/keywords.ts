@@ -46,9 +46,8 @@ export const robotKeywords:RobotKeywords = {
         
         *** Keywords ***
         Filtrar E-mails
-            [Arguments]    ${'{criterio}'}
-            Filter Emails    ${'{criterio}'}`,
-         arguments: ['criterio']
+            List Messages    criterion=${'{filtro_emails}'}`,
+         arguments: ['filtro_emails']
     },
     'Clicar no Elemento': {
         code: `
