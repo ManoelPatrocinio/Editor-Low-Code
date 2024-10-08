@@ -49,7 +49,7 @@ export const robotKeywords:RobotKeywords = {
             [Arguments]    ${'{criterio}'}
             Filter Emails    ${'{criterio}'}`,
          arguments: ['criterio']
-        },
+    },
     'Clicar no Elemento': {
         code: `
         *** Settings ***
@@ -60,6 +60,17 @@ export const robotKeywords:RobotKeywords = {
         Clicar no Elemento
             Click Element    locator=${'{locator}'}`,
          arguments: ['locator']
-        },
+    },
+    'Esperar Elemento': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    RPA.Email.ImapSmtp
+        
+        *** Keywords ***
+        Esperar Elemento
+            Wait Until Page Contains Element    locator=${'{locator}'}  timeout=${'{timeout}'}  error=${'{error_msg}'}`,
+         arguments: ['locator', 'timeout', 'error_msg']
+    },
       // Adicione outras keywords e seus argumentos aqui conforme necessário
 };
