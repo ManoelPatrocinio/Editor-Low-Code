@@ -72,5 +72,16 @@ export const robotKeywords:RobotKeywords = {
             Wait Until Page Contains Element    locator=${'{locator}'}  timeout=${'{timeout}'}  error=${'{error_msg}'}`,
          arguments: ['locator', 'timeout', 'error_msg']
     },
+    'Selecionar Arquivo': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    RPA.Email.ImapSmtp
+        
+        *** Keywords ***
+        Selecionar Arquivo
+            Choose File    locator=${'{locator}'}  file_path=${'{file_path}'}`,
+         arguments: ['locator', 'file_path']
+    },
       // Adicione outras keywords e seus argumentos aqui conforme necessário
 };
