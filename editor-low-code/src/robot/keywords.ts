@@ -51,5 +51,30 @@ export const robotKeywords:RobotKeywords = {
             Filter Emails    ${'{criterio}'}`,
          arguments: ['criterio']
         },
-      // Adicione outras keywords e seus argumentos aqui conforme necessário
+
+    'Abrir Navegador': {
+        code: `
+            *** Settings ***
+            Library    RPA.Browser.Selenium
+            Library    RPA.Email.ImapSmtp
+            
+            *** Keywords ***
+            Abrir Navegador
+                Open Browser    ${'{url}'}    ${'{navegador}'}    ${'{options}'}`,
+            arguments: ['url', 'navegador', 'options']
+        },    
+    // Função com o mesmo nome da utilizada acima 
+    'Enviar E-mails': {
+        code: `
+            *** Settings ***
+            Library    RPA.Browser.Selenium
+            Library    RPA.Email.ImapSmtp
+            
+            *** Keywords ***
+            Send Message
+                Send Message    ${'{email_smtp}'}  ${'{destinatário}'}  ${'{assunto}'}  ${'{corpo_email}'}  ${'{anexos}'} `,
+            arguments: ['email_smtp', 'destinatário', 'assunto', 'corpo_email', 'anexos']
+        },    
+    // Adicione outras keywords e seus argumentos aqui conforme necessário
+
 };
