@@ -35,9 +35,8 @@ export const robotKeywords:RobotKeywords = {
 
         *** Keywords ***
         Acessar SMTP
-            [Arguments]    ${'{host}'}    ${'{porta}'}
-            Open SMTP Connection    ${'{host}'}    ${'{porta}'}`,
-        arguments: ['host', 'porta']
+        Authorize Smtp    account=${'{email_smtp}'}    password=${'{senha_smtp}'}   smtp_server=${'{servidor_smtp}'}   smtp_port${'{porta_smtp}'}`,
+        arguments: ['email_smtp', 'senha_smtp', 'servidor_smtp', 'porta_smtp']
     },
     'Filtrar E-mails': {
         code: `
