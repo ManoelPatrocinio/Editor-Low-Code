@@ -83,5 +83,16 @@ export const robotKeywords:RobotKeywords = {
             Choose File    locator=${'{locator}'}  file_path=${'{file_path}'}`,
          arguments: ['locator', 'file_path']
     },
+    'Coletar Data Atual': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    RPA.Email.ImapSmtp
+        
+        *** Keywords ***
+        Coletar Data Atual
+            ${'{data_atual}'}    Get Current Date  result_format=${'{formato_data}'}`,
+         arguments: ['formato_data']
+    },
       // Adicione outras keywords e seus argumentos aqui conforme necessário
 };
