@@ -105,5 +105,16 @@ export const robotKeywords:RobotKeywords = {
             Create File    path=${'{arquivo}'}  content=${'{conteudo}'}`,
          arguments: ['arquivo', 'conteudo']
     },
+    'Executar Expressao Python': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    RPA.Email.ImapSmtp
+        
+        *** Keywords ***
+        Executar Expressao Python
+            ${'{result_expressao}'}    Evaluate    expression=${'{expressao}'}`,
+         arguments: ['expressao']
+    },
       // Adicione outras keywords e seus argumentos aqui conforme necessário
 };
