@@ -276,10 +276,10 @@ export function main(): string {
 
         <script>
             
+            const vscode = acquireVsCodeApi();
 
             // Lógica para o evento de navegação entre pagina, através do menu lateral
             document.addEventListener('DOMContentLoaded', () => {
-                const vscode = acquireVsCodeApi();
 
                 const btnHome = document.getElementById('home');
                 const btnSendEmail = document.getElementById('EnviarEmail');
@@ -766,9 +766,8 @@ export function form_sendEmail(): string {
                 }
             });
 
-             // Lógica para o evento de navegação entre pagina, através do menu lateral
+            // Lógica para o evento de navegação entre pagina, através do menu lateral
             document.addEventListener('DOMContentLoaded', () => {
-                const vscode = acquireVsCodeApi();
 
                 const btnHome = document.getElementById('home');
                 const btnSendEmail = document.getElementById('EnviarEmail');
@@ -891,6 +890,12 @@ export function form_sendEmail(): string {
                         vscode.postMessage({ command: 'openVoltarParaForm' });
                     });
                 }
+                    
+
+            });
+            
+
+            
         </script>
                 
         
@@ -1251,7 +1256,6 @@ export function form_acessarSMTP(): string {
 
              // Lógica para o evento de navegação entre pagina, através do menu lateral
             document.addEventListener('DOMContentLoaded', () => {
-                const vscode = acquireVsCodeApi();
 
                 const btnHome = document.getElementById('home');
                 const btnSendEmail = document.getElementById('EnviarEmail');
@@ -1374,6 +1378,10 @@ export function form_acessarSMTP(): string {
                         vscode.postMessage({ command: 'openVoltarParaForm' });
                     });
                 }
+                    
+
+            });
+            
         </script>
                 
         
