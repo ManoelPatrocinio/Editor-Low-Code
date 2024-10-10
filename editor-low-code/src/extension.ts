@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { main,form_sendEmail, form_acessarSMTP, form_ColetarDataAtual, form_ClicarNoElemento, form_EsperarElemento, form_SelecionarArquivo, form_CriarArquivo, form_ExecutarExpressaoPython, form_FiltrarEmails } from './pages/webview';
+import { main,form_sendEmail } from './pages/webview';
 import { SendEmailWithRobot } from './utils/send_email_class';
 import { robotKeywords } from './robot/keywords';
 
@@ -27,7 +27,6 @@ export function activate(context: vscode.ExtensionContext) {
 				async (message) => {
 					if (message.command === 'goToHome') {
 						panel!.webview.html = main();
-	
 					}
 					else if(message.command === 'openFilterEmailForm'){
 						panel!.webview.html = form_FiltrarEmails();
@@ -39,28 +38,28 @@ export function activate(context: vscode.ExtensionContext) {
 						panel!.webview.html = form_ColetarDataAtual();
 					}
 					else if(message.command === 'openCopiarArquivoForm'){
-						panel!.webview.html = main();
+						// panel!.webview.html = main();
 					}
 					else if(message.command === 'openMoverArquivoForm'){
-						panel!.webview.html = main();
+						// panel!.webview.html = main();
 					}
 					else if(message.command === 'openCriarArquivoForm'){
 						panel!.webview.html = form_CriarArquivo();
 					}
 					else if(message.command === 'openLerArquivoForm'){
-						panel!.webview.html = main();
+						// panel!.webview.html = main();
 					}
 					else if(message.command === 'openExecutPythonForm'){
 						panel!.webview.html = form_ExecutarExpressaoPython();
 					}
 					else if(message.command === 'openAbrirNavegadorForm'){
-						panel!.webview.html = main();
+						// panel!.webview.html = main();
 					}
 					else if(message.command === 'openInserirTextoForm'){
-						panel!.webview.html = main();
+						// panel!.webview.html = main();
 					}
 					else if(message.command === 'openColetarTextoForm'){
-						panel!.webview.html = main();
+						// panel!.webview.html = main();
 					}
 					else if(message.command === 'openClicarElementoForm'){
 						panel!.webview.html = form_ClicarNoElemento();
@@ -72,13 +71,13 @@ export function activate(context: vscode.ExtensionContext) {
 						panel!.webview.html = form_SelecionarArquivo();
 					}
 					else if(message.command === 'openColetarElementosForm'){
-						panel!.webview.html = main();
+						// panel!.webview.html = main();
 					}
 					else if(message.command === 'openIrParaForm'){
-						panel!.webview.html = main();
+						// panel!.webview.html = main();
 					}
 					else if(message.command === 'openVoltarParaForm'){
-						panel!.webview.html = main();
+						// panel!.webview.html = main();
 					}
 					else if (message.command === 'openSendEmailForm') {
 						panel!.webview.html = form_sendEmail();
