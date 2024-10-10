@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { main,form_sendEmail } from './pages/webview';
+import { main,form_sendEmail,form_ClicarNoElemento,form_ColetarDataAtual,form_CriarArquivo,form_EsperarElemento,form_ExecutarExpressaoPython,form_FiltrarEmails,form_SelecionarArquivo,form_acessarSMTP } from './pages/webview';
 import { SendEmailWithRobot } from './utils/send_email_class';
 import { robotKeywords } from './robot/keywords';
 
