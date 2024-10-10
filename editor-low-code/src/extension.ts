@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { main,form_sendEmail } from './pages/webview';
+import { main,form_sendEmail, form_acessarSMTP, form_ColetarDataAtual, form_ClicarNoElemento, form_EsperarElemento, form_SelecionarArquivo, form_CriarArquivo, form_ExecutarExpressaoPython, form_FiltrarEmails } from './pages/webview';
 import { SendEmailWithRobot } from './utils/send_email_class';
 import { robotKeywords } from './robot/keywords';
 
@@ -30,13 +30,13 @@ export function activate(context: vscode.ExtensionContext) {
 	
 					}
 					else if(message.command === 'openFilterEmailForm'){
-						panel!.webview.html = form_sendEmail();
+						panel!.webview.html = form_FiltrarEmails();
 					}
 					else if(message.command === 'openAcessarSMTPForm'){
-						panel!.webview.html = main();
+						panel!.webview.html = form_acessarSMTP();
 					}
 					else if(message.command === 'openColetarDataAtualForm'){
-						panel!.webview.html = main();
+						panel!.webview.html = form_ColetarDataAtual();
 					}
 					else if(message.command === 'openCopiarArquivoForm'){
 						panel!.webview.html = main();
@@ -45,13 +45,13 @@ export function activate(context: vscode.ExtensionContext) {
 						panel!.webview.html = main();
 					}
 					else if(message.command === 'openCriarArquivoForm'){
-						panel!.webview.html = main();
+						panel!.webview.html = form_CriarArquivo();
 					}
 					else if(message.command === 'openLerArquivoForm'){
 						panel!.webview.html = main();
 					}
 					else if(message.command === 'openExecutPythonForm'){
-						panel!.webview.html = main();
+						panel!.webview.html = form_ExecutarExpressaoPython();
 					}
 					else if(message.command === 'openAbrirNavegadorForm'){
 						panel!.webview.html = main();
@@ -63,13 +63,13 @@ export function activate(context: vscode.ExtensionContext) {
 						panel!.webview.html = main();
 					}
 					else if(message.command === 'openClicarElementoForm'){
-						panel!.webview.html = main();
+						panel!.webview.html = form_ClicarNoElemento();
 					}
 					else if(message.command === 'openEsperarElementoForm'){
-						panel!.webview.html = main();
+						panel!.webview.html = form_EsperarElemento();
 					}
 					else if(message.command === 'openSelecionarArquivoForm'){
-						panel!.webview.html = main();
+						panel!.webview.html = form_SelecionarArquivo();
 					}
 					else if(message.command === 'openColetarElementosForm'){
 						panel!.webview.html = main();

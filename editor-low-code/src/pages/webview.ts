@@ -1166,13 +1166,12 @@ export function form_acessarSMTP(): string {
 
             <!-- Início do Formulário - Acessar SMTP -->
 
-            <div class="row vh-100 bg-custom-dark" >
-                        <div class="col-3 sidebar">                      
-                        </div>
+            
                         <div class="col-9 content d-flex justify-content-center align-items-center ">
                             <div class="card w-75 bg-custom-dark border-light rounded" >
                                 <h5 class="card-header bg-success text-light rounded-top py-2">Acessar SMTP</h5>                            
-                                
+                                <div class=" d-flex mx-auto  d-flex flex-column justify-content-center align-items-center border border-light m-4 rounded" style="width: 90%; height: 90%;">
+
                                     <form id="acessoSMTP" class="p-4 row g-3">
                                         <div class="col-md-6 mb-3">
                                             <label for="server" class=" col-form-label text-white">Server:</label>
@@ -1194,11 +1193,11 @@ export function form_acessarSMTP(): string {
                                             <button type="submit" class="btn btn-success">See Code</button>
                                         </div>
                                     </form>
-                                    
-                                </div>
+
+                                </div>    
                             </div>
                         </div>
-                    </div>
+                    
 
             <!-- Fim do Formulário - Acessar SMTP -->
 
@@ -1649,29 +1648,27 @@ export function form_ClicarNoElemento(): string {
 
             <!-- Início do Formulário - Clicar no Elemento -->
 
-            <div class="row vh-100 bg-custom-dark" >
-                <div class="col-3 sidebar">
-                
-                </div>
+          
                 <div class="col-9 content d-flex justify-content-center align-items-center ">
                     <div class="card w-75 bg-custom-dark border-light rounded" >
-                        <h5 class="card-header bg-success text-light rounded-top py-2">Clicar no Elemento</h5>                            
-                        
-                            <form id="clickelement" class="w-100 p-4">
-                                <div class="mb-3">
-                                    <label for="click" class=" col-form-label text-white">Locator:</label>
-                                    <input type="text" class="form-control" id="click" placeholder="Locator">
-                                </div>
-                
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-success">See Code</button>
-                                </div>
-                            </form>
+                            <h5 class="card-header bg-success text-light rounded-top py-2">Clicar no Elemento</h5>                            
+                        <div class=" d-flex mx-auto  d-flex flex-column justify-content-center align-items-center border border-light m-4 rounded" style="width: 90%; height: 90%;">
+   
+                                <form id="clickelement" class="w-100 p-4">
+                                    <div class="mb-3">
+                                        <label for="click" class=" col-form-label text-white">Locator:</label>
+                                        <input type="text" class="form-control" id="click" placeholder="Locator">
+                                    </div>
+                    
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-success">See Code</button>
+                                    </div>
+                                </form>
                             
                         </div>
                     </div>
                 </div>
-            </div>
+            
 
             <!-- Fim do Formulário - Clicar no Elemento -->
 
@@ -2122,14 +2119,11 @@ export function form_EsperarElemento(): string {
 
             <!-- Início do Formulário - Esperar Elemento -->
 
-            <div class="row vh-100 bg-custom-dark" >
-                <div class="col-3 sidebar">
-                
-                </div>
-                <div class="col-9 content d-flex justify-content-center align-items-center ">
-                    <div class="card w-75 bg-custom-dark border-light rounded" >
+            <div class="col-9 content d-flex justify-content-center align-items-center ">
+                <div class="card w-75 bg-custom-dark border-light rounded" >
                         <h5 class="card-header bg-success text-light rounded-top py-2">Esperar Elemento</h5>                            
-                        
+                    <div class=" d-flex mx-auto  d-flex flex-column justify-content-center align-items-center border border-light m-4 rounded" style="width: 90%; height: 90%;">
+                                
                             <form id="element" class="w-100 p-4">
                                 <div class="mb-3 row align-items-center">
                                     <label for="locators" class="col-sm-3 col-form-label text-white">Locator:</label>
@@ -2155,7 +2149,7 @@ export function form_EsperarElemento(): string {
                                 </div>
                             </form>
                             
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -2609,14 +2603,11 @@ export function form_SelecionarArquivo(): string {
 
             <!-- Início do Formulário - Selecionar Arquivo -->
 
-            <div class="row vh-100 bg-custom-dark" >
-                <div class="col-3 sidebar">
-                
-                </div>
-                <div class="col-9 content d-flex justify-content-center align-items-center ">
-                    <div class="card w-75 bg-custom-dark border-light rounded" >
+            <div class="col-9 content d-flex justify-content-center align-items-center ">
+                <div class="card w-75 bg-custom-dark border-light rounded" >
                         <h5 class="card-header bg-success text-light rounded-top py-2">Selecionar Arquivo</h5>                            
-                        
+                    <div class=" d-flex mx-auto  d-flex flex-column justify-content-center align-items-center border border-light m-4 rounded" style="width: 90%; height: 90%;">
+                                
                             <form id="fileForm" class="w-100 p-4">
                                 <div class="mb-3 row align-items-center">
                                     <label for="file" class="col-sm-3 col-form-label text-white">Locator:</label>
@@ -2636,7 +2627,7 @@ export function form_SelecionarArquivo(): string {
                                 </div>
                             </form>
                             
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -3090,12 +3081,11 @@ export function form_ColetarDataAtual(): string {
 
             <!-- Início do Formulário - Coletar Data Atual -->
 
-            <div class="row vh-100 bg-custom-dark" >
-                        <div class="col-3 sidebar">                      
-                        </div>
+            
                         <div class="col-9 content d-flex justify-content-center align-items-center ">
                             <div class="card w-75 bg-custom-dark border-light rounded" >
                                 <h5 class="card-header bg-success text-light rounded-top py-2">Coletar Data Atual</h5>                            
+                                <div class=" d-flex mx-auto  d-flex flex-column justify-content-center align-items-center border border-light m-4 rounded" style="width: 90%; height: 90%;">
                                 
                                     <form id="criterion" class="w-100 p-4">
                                         <div class="mb-3">
@@ -3110,7 +3100,7 @@ export function form_ColetarDataAtual(): string {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
 
             <!-- Fim do Formulário - Coletar Data Atual -->
 
@@ -3561,14 +3551,14 @@ export function form_CriarArquivo(): string {
 
             <!-- Início do Formulário - Criar Arquivo -->
 
-            <div class="row vh-100 bg-custom-dark" >
-                <div class="col-3 sidebar">
+         
                 
-                </div>
+                
                 <div class="col-9 content d-flex justify-content-center align-items-center ">
                     <div class="card w-75 bg-custom-dark border-light rounded" >
-                        <h5 class="card-header bg-success text-light rounded-top py-2">Criar Arquivo</h5>                            
-                        
+                            <h5 class="card-header bg-success text-light rounded-top py-2">Criar Arquivo</h5>                            
+                        <div class=" d-flex mx-auto  d-flex flex-column justify-content-center align-items-center border border-light m-4 rounded" style="width: 90%; height: 90%;">
+                                
                             <form id="createfile" class="w-100 p-4">
                                 <div class="mb-3 row align-items-center">
                                     <label for="path" class="col-sm-3 col-form-label text-white">Path:</label>
@@ -3590,7 +3580,7 @@ export function form_CriarArquivo(): string {
                         </div>
                     </div>
                 </div>
-            </div>
+            
 
             <!-- Fim do Formulário - Criar Arquivo -->
 
@@ -4041,12 +4031,11 @@ export function form_ExecutarExpressaoPython(): string {
 
             <!-- Início do Formulário - Executar Expressão Python -->
 
-            <div class="row vh-100 bg-custom-dark" >
-                        <div class="col-3 sidebar">                      
-                        </div>
+            
                         <div class="col-9 content d-flex justify-content-center align-items-center ">
                             <div class="card w-75 bg-custom-dark border-light rounded" >
                                 <h5 class="card-header bg-success text-light rounded-top py-2">Executar Expressão Python</h5>                            
+                                <div class=" d-flex mx-auto  d-flex flex-column justify-content-center align-items-center border border-light m-4 rounded" style="width: 90%; height: 90%;">
                                 
                                     <form id="express" class="w-100 p-4">
                                         <div class="mb-4">
@@ -4061,7 +4050,7 @@ export function form_ExecutarExpressaoPython(): string {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                
 
             <!-- Fim do Formulário - Executar Expressão Python -->
 
@@ -4512,13 +4501,12 @@ export function form_FiltrarEmails(): string {
 
             <!-- Início do Formulário - Filtrar Emails -->
 
-            <div class="row vh-100 bg-custom-dark" >
-                        <div class="col-3 sidebar">                      
-                        </div>
+            
                         <div class="col-9 content d-flex justify-content-center align-items-center ">
                             <div class="card w-75 bg-custom-dark border-light rounded" >
                                 <h5 class="card-header bg-success text-light rounded-top py-2">Filtrar E-mails</h5>                            
-                                
+                                <div class=" d-flex mx-auto  d-flex flex-column justify-content-center align-items-center border border-light m-4 rounded" style="width: 90%; height: 90%;">
+                                 
                                     <form id="criterion" class="w-100 p-4">
                                         <div class="mb-4">
                                             <label for="criterios" class="col-sm-3 col-form-label text-white">Criterion:</label>
@@ -4532,7 +4520,7 @@ export function form_FiltrarEmails(): string {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
 
             <!-- Fim do Formulário - Filtrar Emails -->
 
