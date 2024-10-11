@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { main,form_sendEmail,form_ClicarNoElemento,form_ColetarDataAtual,form_CriarArquivo,form_EsperarElemento,form_ExecutarExpressaoPython,form_FiltrarEmails,form_SelecionarArquivo,form_acessarSMTP } from './pages/webview';
+import { main,form_sendEmail,form_ClicarNoElemento,form_ColetarDataAtual,form_CriarArquivo,form_EsperarElemento,form_FiltrarEmails,form_SelecionarArquivo,form_acessarSMTP, form_ExecutarExpressaoPython } from './pages/webview';
 import { SendEmailWithRobot } from './utils/send_email_class';
 import { robotKeywords } from './robot/keywords';
 
@@ -18,7 +18,6 @@ export function activate(context: vscode.ExtensionContext) {
 					enableScripts: true
 				}
 			);
-			
 			// Chama a função com o html para exibir a tela inicial
 			panel.webview.html = main();
 	
@@ -84,7 +83,21 @@ export function activate(context: vscode.ExtensionContext) {
 					} else if (message.command === 'modal_sendEmail') {
 						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
 						await Modal("Enviar E-mail",panel!);
-						panel!.webview.postMessage({ command: 'response', text: 'Código gerado' });
+					}else if (message.command === 'modal_acessoSMTP') {
+						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
+						await Modal("Acessar SMTP",panel!);
+					}
+					else if (message.command === 'modal_clickelement') {
+						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
+						await Modal("Clicar no Elemento",panel!);
+					}
+					else if (message.command === 'modal_express') {
+						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
+						await Modal("Executar Expressao Python",panel!);
+					}
+					else if (message.command === 'modal_createfile') {
+						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
+						await Modal("Criar Arquivo",panel!);
 					}
 				},
 				undefined,

@@ -722,19 +722,28 @@ export function form_sendEmail(): string {
         </div>
         <!-- Início do Modal - Mostrar Código robot -->
 
-        <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
+         <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="robotModalLabel">Código Robot</h5>
+                <div class="modal-content bg-custom-dark text-light">
+                    <div class="modal-header bg-success text-center">
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
                         <!-- O código Robot será injetado aqui -->
                     </div>
+                   <div class="modal-footer justify-content-center border border-0">
+                        <button type="button" class="bg-transparent text-success border border-0"> 
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.3333 2.5H3.33334V13.3333" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.66684 5.83337H16.6668V15.8334C16.6668 16.2754 16.4912 16.6993 16.1787 17.0119C15.8661 17.3244 15.4422 17.5 15.0002 17.5H8.33351C7.89148 17.5 7.46756 17.3244 7.155 17.0119C6.84243 16.6993 6.66684 16.2754 6.66684 15.8334V5.83337Z" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                                Copy code
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div> 
+        </div>  
         
         <!-- Fim do Modal - Mostrar Código robot -->
         
@@ -1209,19 +1218,28 @@ export function form_acessarSMTP(): string {
         </div>
         <!-- Início do Modal - Mostrar Código robot -->
 
-        <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
+         <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="robotModalLabel">Código Robot</h5>
+                <div class="modal-content bg-custom-dark text-light">
+                    <div class="modal-header bg-success text-center">
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
                         <!-- O código Robot será injetado aqui -->
                     </div>
+                   <div class="modal-footer justify-content-center border border-0">
+                        <button type="button" class="bg-transparent text-success border border-0"> 
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.3333 2.5H3.33334V13.3333" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.66684 5.83337H16.6668V15.8334C16.6668 16.2754 16.4912 16.6993 16.1787 17.0119C15.8661 17.3244 15.4422 17.5 15.0002 17.5H8.33351C7.89148 17.5 7.46756 17.3244 7.155 17.0119C6.84243 16.6993 6.66684 16.2754 6.66684 15.8334V5.83337Z" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                                Copy code
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div> 
+        </div>  
         
         <!-- Fim do Modal - Mostrar Código robot -->
         
@@ -1232,12 +1250,10 @@ export function form_acessarSMTP(): string {
             const vscode = acquireVsCodeApi();
 
             // Lógica para resgatar e salvar os dados do input, informados pelo usuário
-            document.getElementById('emailForm').addEventListener('submit', (event) => {
+
+            document.getElementById('acessoSMTP').addEventListener('submit', (event) => {
                 event.preventDefault();
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const body = document.getElementById('body').value;
-                vscode.postMessage({ command: 'modal_sendEmail', email, subject, body });
+                vscode.postMessage({ command: 'modal_acessoSMTP' });
             });
 
             // Escuta o evento gerado no extension.ts para então mostrar o modal com o código robot
@@ -1683,19 +1699,28 @@ export function form_ClicarNoElemento(): string {
         </div>
         <!-- Início do Modal - Mostrar Código robot -->
 
-        <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
+         <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="robotModalLabel">Código Robot</h5>
+                <div class="modal-content bg-custom-dark text-light">
+                    <div class="modal-header bg-success text-center">
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
                         <!-- O código Robot será injetado aqui -->
                     </div>
+                   <div class="modal-footer justify-content-center border border-0">
+                        <button type="button" class="bg-transparent text-success border border-0"> 
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.3333 2.5H3.33334V13.3333" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.66684 5.83337H16.6668V15.8334C16.6668 16.2754 16.4912 16.6993 16.1787 17.0119C15.8661 17.3244 15.4422 17.5 15.0002 17.5H8.33351C7.89148 17.5 7.46756 17.3244 7.155 17.0119C6.84243 16.6993 6.66684 16.2754 6.66684 15.8334V5.83337Z" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                                Copy code
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div> 
+        </div>  
         
         <!-- Fim do Modal - Mostrar Código robot -->
         
@@ -1706,12 +1731,9 @@ export function form_ClicarNoElemento(): string {
             const vscode = acquireVsCodeApi();
 
             // Lógica para resgatar e salvar os dados do input, informados pelo usuário
-            document.getElementById('emailForm').addEventListener('submit', (event) => {
+            document.getElementById('clickelement').addEventListener('submit', (event) => {
                 event.preventDefault();
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const body = document.getElementById('body').value;
-                vscode.postMessage({ command: 'modal_sendEmail', email, subject, body });
+                vscode.postMessage({ command: 'modal_clickelement'});
             });
 
             // Escuta o evento gerado no extension.ts para então mostrar o modal com o código robot
@@ -1852,6 +1874,7 @@ export function form_ClicarNoElemento(): string {
                         vscode.postMessage({ command: 'openVoltarParaForm' });
                     });
                 }
+            }
         </script>
                 
         
@@ -2167,19 +2190,28 @@ export function form_EsperarElemento(): string {
         </div>
         <!-- Início do Modal - Mostrar Código robot -->
 
-        <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
+         <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="robotModalLabel">Código Robot</h5>
+                <div class="modal-content bg-custom-dark text-light">
+                    <div class="modal-header bg-success text-center">
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
                         <!-- O código Robot será injetado aqui -->
                     </div>
+                   <div class="modal-footer justify-content-center border border-0">
+                        <button type="button" class="bg-transparent text-success border border-0"> 
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.3333 2.5H3.33334V13.3333" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.66684 5.83337H16.6668V15.8334C16.6668 16.2754 16.4912 16.6993 16.1787 17.0119C15.8661 17.3244 15.4422 17.5 15.0002 17.5H8.33351C7.89148 17.5 7.46756 17.3244 7.155 17.0119C6.84243 16.6993 6.66684 16.2754 6.66684 15.8334V5.83337Z" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                                Copy code
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div> 
+        </div>  
         
         <!-- Fim do Modal - Mostrar Código robot -->
         
@@ -2190,12 +2222,10 @@ export function form_EsperarElemento(): string {
             const vscode = acquireVsCodeApi();
 
             // Lógica para resgatar e salvar os dados do input, informados pelo usuário
-            document.getElementById('emailForm').addEventListener('submit', (event) => {
+            document.getElementById('element').addEventListener('submit', (event) => {
                 event.preventDefault();
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const body = document.getElementById('body').value;
-                vscode.postMessage({ command: 'modal_sendEmail', email, subject, body });
+                
+                vscode.postMessage({ command: 'modal_elemento'});
             });
 
             // Escuta o evento gerado no extension.ts para então mostrar o modal com o código robot
@@ -2645,19 +2675,28 @@ export function form_SelecionarArquivo(): string {
         </div>
         <!-- Início do Modal - Mostrar Código robot -->
 
-        <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
+         <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="robotModalLabel">Código Robot</h5>
+                <div class="modal-content bg-custom-dark text-light">
+                    <div class="modal-header bg-success text-center">
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
                         <!-- O código Robot será injetado aqui -->
                     </div>
+                   <div class="modal-footer justify-content-center border border-0">
+                        <button type="button" class="bg-transparent text-success border border-0"> 
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.3333 2.5H3.33334V13.3333" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.66684 5.83337H16.6668V15.8334C16.6668 16.2754 16.4912 16.6993 16.1787 17.0119C15.8661 17.3244 15.4422 17.5 15.0002 17.5H8.33351C7.89148 17.5 7.46756 17.3244 7.155 17.0119C6.84243 16.6993 6.66684 16.2754 6.66684 15.8334V5.83337Z" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                                Copy code
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div> 
+        </div>  
         
         <!-- Fim do Modal - Mostrar Código robot -->
         
@@ -3115,19 +3154,28 @@ export function form_ColetarDataAtual(): string {
         </div>
         <!-- Início do Modal - Mostrar Código robot -->
 
-        <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
+         <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="robotModalLabel">Código Robot</h5>
+                <div class="modal-content bg-custom-dark text-light">
+                    <div class="modal-header bg-success text-center">
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
                         <!-- O código Robot será injetado aqui -->
                     </div>
+                   <div class="modal-footer justify-content-center border border-0">
+                        <button type="button" class="bg-transparent text-success border border-0"> 
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.3333 2.5H3.33334V13.3333" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.66684 5.83337H16.6668V15.8334C16.6668 16.2754 16.4912 16.6993 16.1787 17.0119C15.8661 17.3244 15.4422 17.5 15.0002 17.5H8.33351C7.89148 17.5 7.46756 17.3244 7.155 17.0119C6.84243 16.6993 6.66684 16.2754 6.66684 15.8334V5.83337Z" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                                Copy code
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div> 
+        </div>  
         
         <!-- Fim do Modal - Mostrar Código robot -->
         
@@ -3595,19 +3643,28 @@ export function form_CriarArquivo(): string {
         </div>
         <!-- Início do Modal - Mostrar Código robot -->
 
-        <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
+         <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="robotModalLabel">Código Robot</h5>
+                <div class="modal-content bg-custom-dark text-light">
+                    <div class="modal-header bg-success text-center">
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
                         <!-- O código Robot será injetado aqui -->
                     </div>
+                   <div class="modal-footer justify-content-center border border-0">
+                        <button type="button" class="bg-transparent text-success border border-0"> 
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.3333 2.5H3.33334V13.3333" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.66684 5.83337H16.6668V15.8334C16.6668 16.2754 16.4912 16.6993 16.1787 17.0119C15.8661 17.3244 15.4422 17.5 15.0002 17.5H8.33351C7.89148 17.5 7.46756 17.3244 7.155 17.0119C6.84243 16.6993 6.66684 16.2754 6.66684 15.8334V5.83337Z" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                                Copy code
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div> 
+        </div>  
         
         <!-- Fim do Modal - Mostrar Código robot -->
         
@@ -3618,12 +3675,10 @@ export function form_CriarArquivo(): string {
             const vscode = acquireVsCodeApi();
 
             // Lógica para resgatar e salvar os dados do input, informados pelo usuário
-            document.getElementById('emailForm').addEventListener('submit', (event) => {
+            document.getElementById('createfile').addEventListener('submit', (event) => {
                 event.preventDefault();
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const body = document.getElementById('body').value;
-                vscode.postMessage({ command: 'modal_sendEmail', email, subject, body });
+                
+                vscode.postMessage({ command: 'modal_createfile'});
             });
 
             // Escuta o evento gerado no extension.ts para então mostrar o modal com o código robot
@@ -4065,19 +4120,28 @@ export function form_ExecutarExpressaoPython(): string {
         </div>
         <!-- Início do Modal - Mostrar Código robot -->
 
-        <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
+         <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="robotModalLabel">Código Robot</h5>
+                <div class="modal-content bg-custom-dark text-light">
+                    <div class="modal-header bg-success text-center">
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
                         <!-- O código Robot será injetado aqui -->
                     </div>
+                   <div class="modal-footer justify-content-center border border-0">
+                        <button type="button" class="bg-transparent text-success border border-0"> 
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.3333 2.5H3.33334V13.3333" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.66684 5.83337H16.6668V15.8334C16.6668 16.2754 16.4912 16.6993 16.1787 17.0119C15.8661 17.3244 15.4422 17.5 15.0002 17.5H8.33351C7.89148 17.5 7.46756 17.3244 7.155 17.0119C6.84243 16.6993 6.66684 16.2754 6.66684 15.8334V5.83337Z" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                                Copy code
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div> 
+        </div>  
         
         <!-- Fim do Modal - Mostrar Código robot -->
         
@@ -4088,12 +4152,10 @@ export function form_ExecutarExpressaoPython(): string {
             const vscode = acquireVsCodeApi();
 
             // Lógica para resgatar e salvar os dados do input, informados pelo usuário
-            document.getElementById('emailForm').addEventListener('submit', (event) => {
+            document.getElementById('express').addEventListener('submit', (event) => {
                 event.preventDefault();
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const body = document.getElementById('body').value;
-                vscode.postMessage({ command: 'modal_sendEmail', email, subject, body });
+                
+                vscode.postMessage({ command: 'modal_express'});
             });
 
             // Escuta o evento gerado no extension.ts para então mostrar o modal com o código robot
@@ -4535,19 +4597,28 @@ export function form_FiltrarEmails(): string {
         </div>
         <!-- Início do Modal - Mostrar Código robot -->
 
-        <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
+         <div class="modal fade" id="robotModal" tabindex="-1" aria-labelledby="robotModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="robotModalLabel">Código Robot</h5>
+                <div class="modal-content bg-custom-dark text-light">
+                    <div class="modal-header bg-success text-center">
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
                         <!-- O código Robot será injetado aqui -->
                     </div>
+                   <div class="modal-footer justify-content-center border border-0">
+                        <button type="button" class="bg-transparent text-success border border-0"> 
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.3333 2.5H3.33334V13.3333" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.66684 5.83337H16.6668V15.8334C16.6668 16.2754 16.4912 16.6993 16.1787 17.0119C15.8661 17.3244 15.4422 17.5 15.0002 17.5H8.33351C7.89148 17.5 7.46756 17.3244 7.155 17.0119C6.84243 16.6993 6.66684 16.2754 6.66684 15.8334V5.83337Z" stroke="#0AF54C" stroke-width="0.791667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                                Copy code
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div> 
+        </div>  
         
         <!-- Fim do Modal - Mostrar Código robot -->
         
