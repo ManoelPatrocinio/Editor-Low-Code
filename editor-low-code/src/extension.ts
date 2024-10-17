@@ -80,10 +80,12 @@ export function activate(context: vscode.ExtensionContext) {
 					}
 					else if (message.command === 'openSendEmailForm') {
 						panel!.webview.html = form_sendEmail();
-					} else if (message.command === 'modal_sendEmail') {
+					} 
+					else if (message.command === 'modal_sendEmail') {
 						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
 						await Modal("Enviar E-mail",panel!);
-					}else if (message.command === 'modal_acessoSMTP') {
+					}
+					else if (message.command === 'modal_acessoSMTP') {
 						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
 						await Modal("Acessar SMTP",panel!);
 					}
@@ -98,6 +100,22 @@ export function activate(context: vscode.ExtensionContext) {
 					else if (message.command === 'modal_createfile') {
 						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
 						await Modal("Criar Arquivo",panel!);
+					}
+					else if (message.command === 'modal_esperarelemento') {
+						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
+						await Modal("Esperar Elemento",panel!);
+					}
+					else if (message.command === 'modal_selecionararquivo') {
+						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
+						await Modal("Selecionar Arquivo",panel!);
+					}
+					else if (message.command === 'modal_filtraremails') {
+						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
+						await Modal("Filtrar E-mails",panel!);
+					}
+					else if (message.command === 'modal_coletardata') {
+						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
+						await Modal("Coletar Data Atual",panel!);
 					}
 				},
 				undefined,

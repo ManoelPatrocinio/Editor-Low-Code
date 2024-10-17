@@ -1222,7 +1222,7 @@ export function form_acessarSMTP(): string {
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-custom-dark text-light">
                     <div class="modal-header bg-success text-center">
-                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Acessar SMTP</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
@@ -1703,7 +1703,7 @@ export function form_ClicarNoElemento(): string {
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-custom-dark text-light">
                     <div class="modal-header bg-success text-center">
-                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Clicar no Elemento</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
@@ -1874,7 +1874,7 @@ export function form_ClicarNoElemento(): string {
                         vscode.postMessage({ command: 'openVoltarParaForm' });
                     });
                 }
-            }
+            });
         </script>
                 
         
@@ -2155,7 +2155,7 @@ export function form_EsperarElemento(): string {
                         <h5 class="card-header bg-success text-light rounded-top py-2">Esperar Elemento</h5>                            
                     <div class=" d-flex mx-auto  d-flex flex-column justify-content-center align-items-center border border-light m-4 rounded" style="width: 90%; height: 90%;">
                                 
-                            <form id="element" class="w-100 p-4">
+                            <form id="esperarelemento" class="w-100 p-4">
                                 <div class="mb-3 row align-items-center">
                                     <label for="locators" class="col-sm-3 col-form-label text-white">Locator:</label>
                                     <div class="col-sm-9">
@@ -2194,7 +2194,7 @@ export function form_EsperarElemento(): string {
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-custom-dark text-light">
                     <div class="modal-header bg-success text-center">
-                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Esperar Elemento</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
@@ -2222,10 +2222,10 @@ export function form_EsperarElemento(): string {
             const vscode = acquireVsCodeApi();
 
             // Lógica para resgatar e salvar os dados do input, informados pelo usuário
-            document.getElementById('element').addEventListener('submit', (event) => {
+            document.getElementById('esperarelemento').addEventListener('submit', (event) => {
                 event.preventDefault();
                 
-                vscode.postMessage({ command: 'modal_elemento'});
+                vscode.postMessage({ command: 'modal_esperarelemento'});
             });
 
             // Escuta o evento gerado no extension.ts para então mostrar o modal com o código robot
@@ -2366,6 +2366,7 @@ export function form_EsperarElemento(): string {
                         vscode.postMessage({ command: 'openVoltarParaForm' });
                     });
                 }
+            });        
         </script>
                 
         
@@ -2679,7 +2680,7 @@ export function form_SelecionarArquivo(): string {
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-custom-dark text-light">
                     <div class="modal-header bg-success text-center">
-                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Selecionar Arquivo</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
@@ -2707,12 +2708,9 @@ export function form_SelecionarArquivo(): string {
             const vscode = acquireVsCodeApi();
 
             // Lógica para resgatar e salvar os dados do input, informados pelo usuário
-            document.getElementById('emailForm').addEventListener('submit', (event) => {
+            document.getElementById('fileForm').addEventListener('submit', (event) => {
                 event.preventDefault();
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const body = document.getElementById('body').value;
-                vscode.postMessage({ command: 'modal_sendEmail', email, subject, body });
+                vscode.postMessage({ command: 'modal_selecionararquivo'});
             });
 
             // Escuta o evento gerado no extension.ts para então mostrar o modal com o código robot
@@ -2853,6 +2851,7 @@ export function form_SelecionarArquivo(): string {
                         vscode.postMessage({ command: 'openVoltarParaForm' });
                     });
                 }
+            });
         </script>
                 
         
@@ -3134,7 +3133,7 @@ export function form_ColetarDataAtual(): string {
                                 <h5 class="card-header bg-success text-light rounded-top py-2">Coletar Data Atual</h5>                            
                                 <div class=" d-flex mx-auto  d-flex flex-column justify-content-center align-items-center border border-light m-4 rounded" style="width: 90%; height: 90%;">
                                 
-                                    <form id="criterion" class="w-100 p-4">
+                                    <form id="date" class="w-100 p-4">
                                         <div class="mb-3">
                                             <label for="datetime" class="col-sm-6 col-form-label text-white">Formato Data:</label>
                                             <input type="text" class="form-control" id="datetime" placeholder="Data Atual">
@@ -3158,7 +3157,7 @@ export function form_ColetarDataAtual(): string {
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-custom-dark text-light">
                     <div class="modal-header bg-success text-center">
-                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Coletar Data Atual</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
@@ -3186,12 +3185,9 @@ export function form_ColetarDataAtual(): string {
             const vscode = acquireVsCodeApi();
 
             // Lógica para resgatar e salvar os dados do input, informados pelo usuário
-            document.getElementById('emailForm').addEventListener('submit', (event) => {
+            document.getElementById('date').addEventListener('submit', (event) => {
                 event.preventDefault();
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const body = document.getElementById('body').value;
-                vscode.postMessage({ command: 'modal_sendEmail', email, subject, body });
+                vscode.postMessage({ command: 'modal_coletardata'});
             });
 
             // Escuta o evento gerado no extension.ts para então mostrar o modal com o código robot
@@ -3332,6 +3328,7 @@ export function form_ColetarDataAtual(): string {
                         vscode.postMessage({ command: 'openVoltarParaForm' });
                     });
                 }
+            });
         </script>
                 
         
@@ -3647,7 +3644,7 @@ export function form_CriarArquivo(): string {
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-custom-dark text-light">
                     <div class="modal-header bg-success text-center">
-                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Criar Arquivo</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
@@ -3819,6 +3816,7 @@ export function form_CriarArquivo(): string {
                         vscode.postMessage({ command: 'openVoltarParaForm' });
                     });
                 }
+            });
         </script>
                 
         
@@ -4124,7 +4122,7 @@ export function form_ExecutarExpressaoPython(): string {
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-custom-dark text-light">
                     <div class="modal-header bg-success text-center">
-                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Executar Expressão Python</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
@@ -4296,6 +4294,7 @@ export function form_ExecutarExpressaoPython(): string {
                         vscode.postMessage({ command: 'openVoltarParaForm' });
                     });
                 }
+            });
         </script>
                 
         
@@ -4601,7 +4600,7 @@ export function form_FiltrarEmails(): string {
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-custom-dark text-light">
                     <div class="modal-header bg-success text-center">
-                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Enviar E-mail</h5>
+                        <h5 class="modal-title fw-normal w-100" id="robotModalLabel">Código Robot - Filtrar E-mails</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBody">
@@ -4629,12 +4628,9 @@ export function form_FiltrarEmails(): string {
             const vscode = acquireVsCodeApi();
 
             // Lógica para resgatar e salvar os dados do input, informados pelo usuário
-            document.getElementById('emailForm').addEventListener('submit', (event) => {
+            document.getElementById('criterion').addEventListener('submit', (event) => {
                 event.preventDefault();
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const body = document.getElementById('body').value;
-                vscode.postMessage({ command: 'modal_sendEmail', email, subject, body });
+                vscode.postMessage({ command: 'modal_filtraremails'});
             });
 
             // Escuta o evento gerado no extension.ts para então mostrar o modal com o código robot
@@ -4775,6 +4771,7 @@ export function form_FiltrarEmails(): string {
                         vscode.postMessage({ command: 'openVoltarParaForm' });
                     });
                 }
+            });
         </script>
                 
         
