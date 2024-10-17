@@ -2337,7 +2337,7 @@ export function form_moverArquivo(): string {
 
 export function form_coletarTexto(): string {
     return `
-      
+    
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
             body,html{
