@@ -35,9 +35,8 @@ export const robotKeywords:RobotKeywords = {
 
         *** Keywords ***
         Acessar SMTP
-            [Arguments]    ${'{host}'}    ${'{porta}'}
-            Open SMTP Connection    ${'{host}'}    ${'{porta}'}`,
-        arguments: ['host', 'porta']
+        Authorize Smtp    account=${'{email_smtp}'}    password=${'{senha_smtp}'}   smtp_server=${'{servidor_smtp}'}   smtp_port${'{porta_smtp}'}`,
+        arguments: ['email_smtp', 'senha_smtp', 'servidor_smtp', 'porta_smtp']
     },
     'Filtrar E-mails': {
         code: `
@@ -47,10 +46,76 @@ export const robotKeywords:RobotKeywords = {
         
         *** Keywords ***
         Filtrar E-mails
-            [Arguments]    ${'{criterio}'}
-            Filter Emails    ${'{criterio}'}`,
-         arguments: ['criterio']
-        },
+            List Messages    criterion=${'{filtro_emails}'}`,
+         arguments: ['filtro_emails']
+    },
+    'Clicar no Elemento': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    RPA.Email.ImapSmtp
+        
+        *** Keywords ***
+        Clicar no Elemento
+            Click Element    locator=${'{locator}'}`,
+         arguments: ['locator']
+    },
+    'Esperar Elemento': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    RPA.Email.ImapSmtp
+        
+        *** Keywords ***
+        Esperar Elemento
+            Wait Until Page Contains Element    locator=${'{locator}'}  timeout=${'{timeout}'}  error=${'{error_msg}'}`,
+         arguments: ['locator', 'timeout', 'error_msg']
+    },
+    'Selecionar Arquivo': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    RPA.Email.ImapSmtp
+        
+        *** Keywords ***
+        Selecionar Arquivo
+            Choose File    locator=${'{locator}'}  file_path=${'{file_path}'}`,
+         arguments: ['locator', 'file_path']
+    },
+    'Coletar Data Atual': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    RPA.Email.ImapSmtp
+        
+        *** Keywords ***
+        Coletar Data Atual
+            ${'{data_atual}'}    Get Current Date  result_format=${'{formato_data}'}`,
+         arguments: ['formato_data']
+    },
+    'Criar Arquivo': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    RPA.Email.ImapSmtp
+        
+        *** Keywords ***
+        Criar Arquivo
+            Create File    path=${'{arquivo}'}  content=${'{conteudo}'}`,
+         arguments: ['arquivo', 'conteudo']
+    },
+    'Executar Expressao Python': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    RPA.Email.ImapSmtp
+        
+        *** Keywords ***
+        Executar Expressao Python
+            ${'{result_expressao}'}    Evaluate    expression=${'{expressao}'}`,
+         arguments: ['expressao']
+    },
+
     'Copiar Arquivo': {
         code: `
         *** Settings ***
@@ -96,6 +161,5 @@ export const robotKeywords:RobotKeywords = {
             [Arguments]   Get Text    locator=${'{locator}'} `,
         arguments: ['locator']
         },
-    
       // Adicione outras keywords e seus argumentos aqui conforme necessário
 };
