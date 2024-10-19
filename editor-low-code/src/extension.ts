@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
-import { main,form_sendEmail,form_ClicarNoElemento,form_ColetarDataAtual,form_CriarArquivo,form_EsperarElemento,form_FiltrarEmails,form_SelecionarArquivo,form_acessarSMTP, form_ExecutarExpressaoPython } from './pages/webview';
+
+import { main,form_sendEmail,form_ClicarNoElemento,form_ColetarDataAtual,form_CriarArquivo,form_EsperarElemento,form_FiltrarEmails,form_SelecionarArquivo,form_acessarSMTP, form_ExecutarExpressaoPython, form_InserirTexto, form_VoltarPara, form_IrPara } from './pages/webview';
 import { SendEmailWithRobot } from './utils/send_email_class';
 import { robotKeywords } from './robot/keywords';
 
@@ -55,7 +56,8 @@ export function activate(context: vscode.ExtensionContext) {
 						// panel!.webview.html = main();
 					}
 					else if(message.command === 'openInserirTextoForm'){
-						// panel!.webview.html = main();
+
+						 panel!.webview.html = form_InserirTexto();
 					}
 					else if(message.command === 'openColetarTextoForm'){
 						// panel!.webview.html = main();
@@ -73,19 +75,20 @@ export function activate(context: vscode.ExtensionContext) {
 						// panel!.webview.html = main();
 					}
 					else if(message.command === 'openIrParaForm'){
-						// panel!.webview.html = main();
+						 panel!.webview.html = form_IrPara();
 					}
 					else if(message.command === 'openVoltarParaForm'){
-						// panel!.webview.html = main();
-					}
+						 panel!.webview.html = form_VoltarPara(); 
+
 					else if (message.command === 'openSendEmailForm') {
 						panel!.webview.html = form_sendEmail();
 					} 
 					else if (message.command === 'modal_sendEmail') {
 						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
 						await Modal("Enviar E-mail",panel!);
-					}
-					else if (message.command === 'modal_acessoSMTP') {
+			
+					}else if (message.command === 'modal_acessoSMTP') {
+
 						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
 						await Modal("Acessar SMTP",panel!);
 					}
@@ -116,6 +119,16 @@ export function activate(context: vscode.ExtensionContext) {
 					else if (message.command === 'modal_coletardata') {
 						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
 						await Modal("Coletar Data Atual",panel!);
+					else if (message.command === 'modal_inserirtexto') {
+						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
+						await Modal("Inserir Texto",panel!);
+					}
+					else if (message.command === 'modal_irpara') {
+						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
+						await Modal("Ir Para",panel!);
+					}
+					else if (message.command === 'modal_voltarpara') {
+						await Modal("Voltar Para",panel!);
 					}
 				},
 				undefined,
