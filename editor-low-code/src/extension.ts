@@ -39,16 +39,16 @@ export function activate(context: vscode.ExtensionContext) {
 						panel!.webview.html = main();
 					}
 					else if(message.command === 'openCopiarArquivoForm'){
-						panel!.webview.html = main();
+						panel!.webview.html = form_copiarArquivo();
 					}
 					else if(message.command === 'openMoverArquivoForm'){
-						panel!.webview.html = main();
+						panel!.webview.html = form_moverArquivo();
 					}
 					else if(message.command === 'openCriarArquivoForm'){
 						panel!.webview.html = main();
 					}
 					else if(message.command === 'openLerArquivoForm'){
-						panel!.webview.html = main();
+						panel!.webview.html = form_lerArquivo();
 					}
 					else if(message.command === 'openExecutPythonForm'){
 						panel!.webview.html = main();
@@ -60,7 +60,7 @@ export function activate(context: vscode.ExtensionContext) {
 						panel!.webview.html = main();
 					}
 					else if(message.command === 'openColetarTextoForm'){
-						panel!.webview.html = main();
+						panel!.webview.html = form_coletarTexto();
 					}
 					else if(message.command === 'openClicarElementoForm'){
 						panel!.webview.html = main();
