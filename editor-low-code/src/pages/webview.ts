@@ -3140,12 +3140,9 @@ export function form_copiarArquivo(): string {
             const vscode = acquireVsCodeApi();
 
             // Lógica para resgatar e salvar os dados do input, informados pelo usuário
-            document.getElementById('emailForm').addEventListener('submit', (event) => {
+            document.getElementById('fileForm').addEventListener('submit', (event) => {
                 event.preventDefault();
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const body = document.getElementById('body').value;
-                vscode.postMessage({ command: 'modal_sendEmail', email, subject, body });
+                vscode.postMessage({ command: 'modal_fileForm'});
             });
 
             // Escuta o evento gerado no extension.ts para então mostrar o modal com o código robot
