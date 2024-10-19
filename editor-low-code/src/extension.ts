@@ -108,7 +108,6 @@ export function activate(context: vscode.ExtensionContext) {
 						await Modal("Ir Para",panel!);
 					}
 					else if (message.command === 'modal_voltarpara') {
-						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
 						await Modal("Voltar Para",panel!);
 					}
 				},
