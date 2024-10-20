@@ -3566,7 +3566,7 @@ export function form_lerArquivo(): string {
                         <div class="card w-75 bg-custom-dark border-light rounded" >
                             <h5 class="card-header bg-success text-light rounded-top py-2">Ler Arquivo</h5>                            
                             
-                                <form id="fileForm" class="w-100 p-4">
+                                <form id="readfileForm" class="w-100 p-4">
                                     <div class="mb-3 row align-items-center">
                                         <label for="file" class="col-sm-3 col-form-label text-white">Source:</label>
                                         <div class="col-sm-9">
@@ -3612,12 +3612,9 @@ export function form_lerArquivo(): string {
             const vscode = acquireVsCodeApi();
 
             // Lógica para resgatar e salvar os dados do input, informados pelo usuário
-            document.getElementById('emailForm').addEventListener('submit', (event) => {
+            document.getElementById('readfileForm').addEventListener('submit', (event) => {
                 event.preventDefault();
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const body = document.getElementById('body').value;
-                vscode.postMessage({ command: 'modal_sendEmail', email, subject, body });
+                vscode.postMessage({ command: 'modal_readfileForm'});
             });
 
             // Escuta o evento gerado no extension.ts para então mostrar o modal com o código robot
@@ -4041,7 +4038,7 @@ export function form_moverArquivo(): string {
                     <div class="card w-75 bg-custom-dark border-light rounded" >
                         <h5 class="card-header bg-success text-light rounded-top py-2">Mover Arquivo</h5>                            
                         
-                            <form id="fileForm" class="w-100 p-4">
+                            <form id="moverfileForm" class="w-100 p-4">
                                 <div class="mb-3 row align-items-center">
                                     <label for="file" class="col-sm-3 col-form-label text-white">Source:</label>
                                     <div class="col-sm-9">
@@ -4093,12 +4090,9 @@ export function form_moverArquivo(): string {
             const vscode = acquireVsCodeApi();
 
             // Lógica para resgatar e salvar os dados do input, informados pelo usuário
-            document.getElementById('emailForm').addEventListener('submit', (event) => {
+            document.getElementById('moverfileForm').addEventListener('submit', (event) => {
                 event.preventDefault();
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const body = document.getElementById('body').value;
-                vscode.postMessage({ command: 'modal_sendEmail', email, subject, body });
+                vscode.postMessage({ command: 'modal_moverfileForm'});
             });
 
             // Escuta o evento gerado no extension.ts para então mostrar o modal com o código robot
@@ -4522,7 +4516,7 @@ export function form_coletarTexto(): string {
                     <div class="card w-75 bg-custom-dark border-light rounded" >
                         <h5 class="card-header bg-success text-light rounded-top py-2">Coletar Texto</h5>                            
                         
-                            <form id="fileForm" class="w-100 p-4">
+                            <form id="Formcoletartxt" class="w-100 p-4">
                                 <div class="mb-3 row align-items-center">
                                     <label for="file" class="col-sm-3 col-form-label text-white">COLETAR TEXTO:</label>
                                     <div class="col-sm-9">
@@ -4569,12 +4563,9 @@ export function form_coletarTexto(): string {
             const vscode = acquireVsCodeApi();
 
             // Lógica para resgatar e salvar os dados do input, informados pelo usuário
-            document.getElementById('emailForm').addEventListener('submit', (event) => {
+            document.getElementById('Formcoletartxt').addEventListener('submit', (event) => {
                 event.preventDefault();
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const body = document.getElementById('body').value;
-                vscode.postMessage({ command: 'modal_sendEmail', email, subject, body });
+                vscode.postMessage({ command: 'modal_Formcoletartxt'});
             });
 
             // Escuta o evento gerado no extension.ts para então mostrar o modal com o código robot
