@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { main,form_sendEmail } from './pages/webview';
+import { main,form_sendEmail, form_AbrirNavegador } from './pages/webview';
 import { SendEmailWithRobot } from './utils/send_email_class';
 import { robotKeywords } from './robot/keywords';
 
@@ -54,7 +54,7 @@ export function activate(context: vscode.ExtensionContext) {
 						panel!.webview.html = main();
 					}
 					else if(message.command === 'openAbrirNavegadorForm'){
-						panel!.webview.html = main();
+						panel!.webview.html = form_AbrirNavegador();
 					}
 					else if(message.command === 'openInserirTextoForm'){
 						panel!.webview.html = main();
@@ -86,6 +86,11 @@ export function activate(context: vscode.ExtensionContext) {
 						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
 						await Modal("Enviar E-mail",panel!);
 						panel!.webview.postMessage({ command: 'response', text: 'Código gerado' });
+					}
+					else if (message.command === 'modal_openNavegador') {
+						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
+						await Modal("Abrir Navegador",panel!);
+					
 					}
 				},
 				undefined,
