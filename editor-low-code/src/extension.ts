@@ -14,6 +14,11 @@ import {
   form_InserirTexto,
   form_VoltarPara,
   form_IrPara,
+  form_copiarArquivo,
+  form_lerArquivo,
+  form_moverArquivo,
+  form_coletarTexto,
+  form_AbrirNavegador,
 } from "./pages/webview";
 import { robotKeywords } from "./robot/keywords";
 
@@ -44,37 +49,35 @@ export function activate(context: vscode.ExtensionContext) {
           } else if (message.command === "openColetarDataAtualForm") {
             panel!.webview.html = form_ColetarDataAtual();
           } else if (message.command === "openCopiarArquivoForm") {
-            // panel!.webview.html = main();
+            panel!.webview.html = form_copiarArquivo();
           } else if (message.command === "openMoverArquivoForm") {
-            // panel!.webview.html = main();
+            panel!.webview.html = form_moverArquivo();
           } else if (message.command === "openCriarArquivoForm") {
             panel!.webview.html = form_CriarArquivo();
           } else if (message.command === "openLerArquivoForm") {
-            // panel!.webview.html = main();
+            panel!.webview.html = form_lerArquivo();
           } else if (message.command === "openExecutPythonForm") {
             panel!.webview.html = form_ExecutarExpressaoPython();
           } else if (message.command === "openAbrirNavegadorForm") {
-            // panel!.webview.html = main();
+            panel!.webview.html = form_AbrirNavegador();
           } else if (message.command === "openInserirTextoForm") {
             panel!.webview.html = form_InserirTexto();
           } else if (message.command === "openColetarTextoForm") {
-            // panel!.webview.html = main();
+            panel!.webview.html = form_coletarTexto();
           } else if (message.command === "openClicarElementoForm") {
             panel!.webview.html = form_ClicarNoElemento();
           } else if (message.command === "openEsperarElementoForm") {
             panel!.webview.html = form_EsperarElemento();
           } else if (message.command === "openSelecionarArquivoForm") {
             panel!.webview.html = form_SelecionarArquivo();
-          } else if (message.command === "openColetarElementosForm") {
-            // panel!.webview.html = main();
           } else if (message.command === "openIrParaForm") {
             panel!.webview.html = form_IrPara();
           } else if (message.command === "openVoltarParaForm") {
-			await Modal("Voltar Para", panel!);
+            await Modal("Voltar Para", panel!);
           } else if (message.command === "openSendEmailForm") {
             panel!.webview.html = form_sendEmail();
           } else if (message.command === "modal_sendEmail") {
-            await Modal("Enviar E-mail", panel!);
+            await Modal("Enviar E-mails", panel!);
           } else if (message.command === "modal_acessoSMTP") {
             await Modal("Acessar SMTP", panel!);
           } else if (message.command === "modal_clickelement") {
@@ -98,6 +101,23 @@ export function activate(context: vscode.ExtensionContext) {
           } else if (message.command === "modal_voltarpara") {
             await Modal("Voltar Para", panel!);
           }
+          else if (message.command === "modal_copyFileForm") {
+            await Modal("Copiar Arquivo", panel!);
+          }
+          else if (message.command === "modal_readfileForm") {
+            await Modal("Ler Arquivo", panel!);
+          }
+          else if (message.command === "modal_moverfileForm") {
+            await Modal("Mover Arquivo", panel!);
+          }
+          else if (message.command === "modal_Formcoletartxt") {
+            await Modal("Coletar Texto", panel!);
+          }
+          else if (message.command === 'modal_openNavegador') {
+						// função para abrir o modal, deve se passado como 1º parâmetro a chave correspondente ao código robot que será exibido, presente na variável 'robotKeywords' 
+						await Modal("Abrir Navegador",panel!);
+					
+					}
         },
         undefined,
         context.subscriptions

@@ -7,25 +7,26 @@ export type RobotKeywords = Record<string, RobotKeyword>;
 
 // Exemplo de códigos das keywords
 export const robotKeywords: RobotKeywords = {
-  "Enviar E-mail": {
+  'Enviar E-mails': {
     code: `
         *** Settings ***
         Library    RPA.Browser.Selenium
         Library    RPA.Email.ImapSmtp
-
-        *** Variables ***
         
-        ${"${email}"}    
-        ${"${assunto}"}    
-        ${"${mensagem}"}
-    
+        *** Variables ***
+
+        ${'${email_smtp}'}      exemple
+        ${'${destinatário}'}    exemple
+        ${'${assunto}'}         exemple
+        ${'${corpo_email}'}     exemple
+        ${'${anexos}'}          exemple
 
         *** Keywords ***
-        Enviar E-mail
-            [Arguments]    ${"${email}"}    ${"${assunto}"}    ${"${mensagem}"}
-            Send Email    ${"${email}"}    ${"${assunto}"}    ${"${mensagem}"}`,
-    arguments: ["email", "assunto", "mensagem"],
-  },
+
+        Send Message
+            Send Message    ${'${email_smtp}'}  ${'${destinatário}'}  ${'${assunto}'}  ${'${corpo_email}'}  ${'${anexos}'} `,
+        arguments: ['email_smtp', 'destinatário', 'assunto', 'corpo_email', 'anexos']
+    }, 
   "Acessar SMTP": {
     code: `
         *** Settings ***
@@ -224,5 +225,95 @@ export const robotKeywords: RobotKeywords = {
         `,
     arguments: [],
   },
+  'Copiar Arquivo': {
+      code: `
+        *** Settings ***
+
+        Library    RPA.Browser.Selenium
+        Library    OperatingSystem
+        
+        *** Variables ***
+
+        ${'${arquivo_para_copiar}'}     exemple
+        ${'${diretorio_final}'}         exemple
+
+
+        *** Keywords ***
+        
+        Copiar Arquivo
+          Copy File  source ${'${arquivo_para_copiar}'}    destination ${'${diretorio_final}'}
+
+      `,
+        arguments: ['arquivo_para_copiar','diretorio_final']
+      },
+    'Ler Arquivo': {
+      code: `
+        *** Settings ***
+
+        Library    RPA.Browser.Selenium
+        Library    OperatingSystem
+
+        *** Variables ***
+        
+        ${'${conteudo_arquivo}'}         exemple
+        ${'${arquivo}'}                  exemple
+
+        *** Keywords ***
+        Ler Arquivo
+            ${'${conteudo_arquivo}'}    Get File    ${'${arquivo}'}
+      `,
+
+      arguments: ['conteudo_arquivo','arquivo']
+
+      },
+    'Mover Arquivo': {
+      code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+        Library    OperatingSystem
+
+        *** Variables ***
+        
+        ${'${arquivo_para_mover}'}         exemple
+        ${'${diretorio_final}'}            exemple
+            
+        *** Keywords ***
+        Mover Arquivo
+            Move File    source=${'${arquivo_para_mover}'}    destination=${'${diretorio_final}'} 
+      `,
+         arguments: ['arquivo_para_mover','diretorio_final']
+        },
+    'Coletar Texto': {
+        code: `
+        *** Settings ***
+        Library    RPA.Browser.Selenium
+
+        *** Variables ***
+        
+        ${'${locator}'}         exemple
+            
+        *** Keywords ***
+        Coletar Texto
+            Get Text    locator=${'${locator}'} `,
+        arguments: ['locator']
+        },
+        'Abrir Navegador': {
+          code: `
+              *** Settings ***
+              Library    RPA.Browser.Selenium
+
+              *** Variables ***
+
+               ${'${url}'}         exemple
+               ${'${navegador}'}   exemple
+               ${'${options}'}     exemple
+
+              
+              *** Keywords ***
+              Abrir Navegador
+                  Open Browser    ${'${url}'}    ${'${navegador}'}    ${'${options}'}`,
+              arguments: ['url', 'navegador', 'options']
+          }, 
+          
   // Adicione outras keywords e seus argumentos aqui conforme necessário
 };
